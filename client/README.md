@@ -1,0 +1,2 @@
+# client
+A JavaScript project
