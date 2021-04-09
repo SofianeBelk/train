@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 
-public class ApiToold {
+public class ApiTools {
 	public static StringBuffer res=new StringBuffer();
 	
 	public static void getDataURI() throws IOException  {
