@@ -24,28 +24,27 @@ class Signup extends Component{
         this.setState({ signUpusername: event.target.value })
     }
 
-    canBeSubmitted
     validatEntry(){
         return (this.state.firstname.length > 0 && this.state.lastname.length > 0 && this.state.pseudo.length > 0 
                 && this.state.password.length > 0 && this.state.email.length && this.state.birthdate.length > 0 && this.state.telephone.length > 0
         )
     }
-    handleSubmit = (evt) => {
-    evt.preventDefault()
-    if(this.canBeSubmitted()){
-         axios.post('http://localhost:8080/backend/Signup', require('querystring').stringify(this.state)).then(
-            (resp) => {
-                if(resp.data.status==="ok"){
-                     alert(resp.data.message)
-                     this.props.setPage("Dashboard")
-                }else{
-                     alert(resp.data.message)
-             }
-                },(err) => {
-                    alert(err)
+    validatEntry = (evt) => {
+        evt.preventDefault()
+        if(this.canBeSubmitted()){
+            axios.post('http://localhost:8080/backend/Signup', require('querystring').stringify(this.state)).then(
+                (resp) => {
+                    if(resp.data.status==="ok"){
+                        alert(resp.data.message)
+                        this.props.setPage("Dashboard")
+                    }else{
+                        alert(resp.data.message)
                 }
-            );
-        }
+                    },(err) => {
+                        alert(err)
+                    }
+                );
+            }
     }
 
     render() {
