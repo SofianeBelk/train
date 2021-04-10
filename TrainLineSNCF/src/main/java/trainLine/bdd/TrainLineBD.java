@@ -38,16 +38,23 @@ public class TrainLineBD {
 
 	public static boolean addNewLineBD(String origin, String destination, String pleinTarif1ere, String pleinTarif2nde, String prixdappel2nde) throws Exception 
 	{
-	    String requete = "insert into  "+LineTable+" values ('"+origin+"','"+pleinTarif1ere+"','"+destination+"','"+pleinTarif2nde+"','"+prixdappel2nde+"' )";
+		JSONObject res = searchLine(origin);
+		if (res.isEmpty()) {
+			System.out.println("l'information est déja présente dans la base de donnée");
+			return true;
+		}else {
+			String requete = "insert into  "+LineTable+" values ('"+origin+"','"+pleinTarif1ere+"','"+destination+"','"+pleinTarif2nde+"','"+prixdappel2nde+"' )";
 		
-		Connection connexion = BaseTools.getMySQLConnection();
-		Statement statement = connexion.createStatement();
-		int retour = statement.executeUpdate(requete);
+			Connection connexion = BaseTools.getMySQLConnection();
+			Statement statement = connexion.createStatement();		
+		
+			int retour = statement.executeUpdate(requete);
 
-		statement.close();
-		connexion.close();
+			statement.close();
+			connexion.close();
 		
-		return retour != 0;
+			return retour != 0;
+		}
 	}
 
 	public static JSONObject getAllLine() throws SQLException {

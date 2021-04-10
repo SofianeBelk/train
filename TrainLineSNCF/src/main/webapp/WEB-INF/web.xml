@@ -14,10 +14,6 @@
             <servlet-class>train.servlets.SearchTrain</servlet-class>
    </servlet>
     <servlet>
-            <servlet-name>TrainLines</servlet-name>
-            <servlet-class>train.servlets.TrainLines</servlet-class>
-   </servlet>
-    <servlet>
             <servlet-name>TrainRegistration</servlet-name>
             <servlet-class>train.servlets.Registration</servlet-class>
    </servlet>

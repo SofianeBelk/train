@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.SQLException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import trainLine.bdd.TrainLineBD;
-import trainLine.utils.ApiTools;
+
 
 
 public class TrainLine {
@@ -34,8 +33,6 @@ public class TrainLine {
 			result.put("id", 0);
 			result.put("error", "arguments invalide");
 	    }else {
-	    	// pas besoin de se connecter pour faire la recherche
-	    	//result.put("searchResult", TrainLineBD.searchLine(origin)) ;
 	    	
 	    	//obtenir un accées a l'API avec un filtre
 	    	URL url = new URL("https://ressources.data.sncf.com/api/records/1.0/search/?dataset=tarifs-intercites-de-jour&q=&sort=origine&facet=origine&facet=destination&refine.origine="+origin);
@@ -65,19 +62,10 @@ public class TrainLine {
 	    
 		return result;
 	}
-/*
-	public static JSONObject getAllTrainLine() throws SQLException {
-		
-		JSONObject result = new JSONObject();
-	    
-	    result.put("Lines", TrainLineBD.getAllLine()) ; 
-		return result;
-	} */
+
 	
 	public static void  recoverDataFromApi(JSONObject j) throws Exception{
 		JSONArray ja=j.getJSONArray("records");
-		System.out.println("Nombre de train en france est : "+ja.length());
-
 		for(int i=0 ;i<ja.length();i++) {
 			j= (JSONObject) ja.get(i);
 			JSONObject train = new JSONObject(j.get("fields").toString());
