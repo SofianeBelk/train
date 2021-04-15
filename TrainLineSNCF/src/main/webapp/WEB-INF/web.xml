@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee_7" xsi:schemaLocation=
+"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+id="WebApp_ID" version="4.0">
+
+
+ <dependency>
+    <groupId>org.json</groupId>
+    <artifactId><?xml-stylesheet type="json" href=""?></artifactId>
+    <version>20080701</version>
+</dependency>
+
+
+ <display-name>TrainLineSNCF</display-name> 
+
+    <servlet>
+            <servlet-name>TrainRegistration</servlet-name>
+            <servlet-class>trainLine.servlets.Registration</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>TrainRegistration</servlet-name>
+            <url-pattern>/Registration</url-pattern>
+   </servlet-mapping>
+   
+   
+   
+    <servlet>
+            <servlet-name>TrainReservation </servlet-name>
+            <servlet-class>trainLine.servlets.ReservationTicket</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>TrainReservation</servlet-name>
+            <url-pattern>/Reservation</url-pattern>
+   </servlet-mapping>
+
+
+    <servlet>
+            <servlet-name>TrainSearch </servlet-name>
+            <servlet-class>trainLine.servlets.SearchTrain</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>TrainSearch</servlet-name>
+            <url-pattern>/Search</url-pattern>
+   </servlet-mapping>
+</web-app>
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+
