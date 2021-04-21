@@ -13,6 +13,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/belkhir/JSON-java-master/src/main/java/json-java.jar"/>
+	<classpathentry kind="lib" path="jars/json-java.jar"/>
+	<classpathentry kind="lib" path="jars/mysql-connector-java-8.0.24.jar"/>
+	<classpathentry kind="lib" path="jars/protobuf-java-3.11.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

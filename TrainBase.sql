@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Jeu 01 Avril 2021 à 23:52
+-- Généré le :  Mer 21 Avril 2021 à 15:41
 -- Version du serveur :  5.7.33-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.24-0ubuntu0.18.04.7
 
@@ -53,11 +53,11 @@ CREATE TABLE `tarifLine` (
   `origin` varchar(32) NOT NULL,
   `pleinTarif1ere` int(3) NOT NULL,
   `destination` varchar(32) NOT NULL,
-  `pleinTarif2nde` varchar(32) NOT NULL,
+  `pleinTarif2nde` int(3) NOT NULL,
   `prixdappel2nde` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+
 
 --
 -- Structure de la table `utilisateur`

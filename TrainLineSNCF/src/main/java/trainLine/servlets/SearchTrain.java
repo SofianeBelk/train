@@ -16,7 +16,6 @@ public class SearchTrain extends HttpServlet{
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setContentType("text/json");
 		PrintWriter out = response.getWriter();
 		
 		String origin= request.getParameter("origin");

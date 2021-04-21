@@ -11,12 +11,12 @@ import trainLine.utils.BaseTools;
 
 public class TrainLineBD {
 	
-	protected static String LineTable = "tarifLine"; // � changer plustard
+	protected static String LineTable = "tarifLine"; 
 	
-	public static JSONObject searchLine(String origin) throws Exception{
+	public static JSONObject searchLine(String origin, String distination) throws Exception{
 
 		JSONObject result = new JSONObject();
-		String requete = "select origin, destination, pleinTarif1ere, pleinTarif2nde, prixdappel2nde from "+LineTable+" where origin = '"+origin+"'";    
+		String requete = "select origin, destination, pleinTarif1ere, pleinTarif2nde, prixdappel2nde from "+LineTable+" where origin = '"+origin+"' and destination ='"+distination+"'";    
 		
 		Connection connexion = BaseTools.getMySQLConnection();
 		Statement statement = connexion.createStatement();		
@@ -36,17 +36,21 @@ public class TrainLineBD {
 		return result;
 	}
 
-	public static boolean addNewLineBD(String origin, String destination, String pleinTarif1ere, String pleinTarif2nde, String prixdappel2nde) throws Exception 
+	public static boolean addNewLineBD(String origin, String destination, int pleinTarif1ere, int pleinTarif2nde, int prixdappel2nde) throws Exception 
 	{
-		JSONObject res = searchLine(origin);
-		if (res.isEmpty()) {
-			System.out.println("l'information est déja présente dans la base de donnée");
-			return true;
-		}else {
+		JSONObject res = searchLine(origin, destination);
+		Connection connexion = BaseTools.getMySQLConnection();
+		Statement statement = connexion.createStatement();	
+		
+		if (!res.isEmpty()) {
+			System.out.println("les données sont disponibles, mise a jours des données en cours");
+			String req = "delete from "+LineTable+" where origin = " +origin+ " and destination = " +destination;
+			statement.executeUpdate(req);
+
+		}
 			String requete = "insert into  "+LineTable+" values ('"+origin+"','"+pleinTarif1ere+"','"+destination+"','"+pleinTarif2nde+"','"+prixdappel2nde+"' )";
 		
-			Connection connexion = BaseTools.getMySQLConnection();
-			Statement statement = connexion.createStatement();		
+				
 		
 			int retour = statement.executeUpdate(requete);
 
@@ -54,7 +58,7 @@ public class TrainLineBD {
 			connexion.close();
 		
 			return retour != 0;
-		}
+		
 	}
 
 	public static JSONObject getAllLine() throws SQLException {

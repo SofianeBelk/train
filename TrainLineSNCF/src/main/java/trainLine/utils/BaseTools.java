@@ -16,7 +16,7 @@ public class BaseTools {
 	public static boolean MYSQLPOOLING=false;
 	
 	
-	public static String MYSQLUSERNAME="Belkhir";  //a modifier selon  l'username
+	public static String MYSQLUSERNAME="belkhir";  //a modifier selon  l'username
 	public static String MYSQLPASSWORD="root";    //a modifier selon le mot de passe associe a l'username
 	
 	private DataSource dataSource;
