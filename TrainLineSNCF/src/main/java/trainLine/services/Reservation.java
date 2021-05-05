@@ -35,5 +35,13 @@ public class Reservation {
 
 		return result;
 	}
+	
+	public static JSONObject CodePromo(String login, String origin, String distination) throws Exception {
+		int numb = (int) (Math.random() * ( 1000000 ));
+		String code = login+"0"+origin+"0"+distination+numb;
+		JSONObject resultat = new JSONObject();
+		resultat.append("codePromo", code);
+		return resultat;
+	}
 
 }

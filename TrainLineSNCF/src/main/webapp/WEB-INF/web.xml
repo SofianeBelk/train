@@ -43,6 +43,15 @@ id="WebApp_ID" version="4.0">
             <servlet-name>TrainSearch</servlet-name>
             <url-pattern>/Search</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+            <servlet-name>MiseAJour</servlet-name>
+            <servlet-class>trainLine.servlets.MiseajourBDD</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>MiseAJour</servlet-name>
+            <url-pattern>/Update</url-pattern>
+   </servlet-mapping>
 </web-app>
 <!-- https://mvnrepository.com/artifact/org.json/json -->
 

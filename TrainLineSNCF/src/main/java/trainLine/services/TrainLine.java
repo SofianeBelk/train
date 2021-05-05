@@ -4,10 +4,17 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import trainLine.bdd.TrainLineBD;
-
+import trainLine.utils.BaseTools;
+import trainLine.utils.TrainTools;
 
 
 public class TrainLine {
@@ -33,8 +40,12 @@ public class TrainLine {
 			result.put("id", 0);
 			result.put("error", "arguments invalide");
 	    }else {
-	    	
-	    	//obtenir un accées a l'API avec un filtre
+	    	//on va d'abord questionner notre base de donnée
+	    	JSONObject r1 = TrainTools.TrainSearchFromBdd(origin);
+	    	if(!r1.isEmpty()) {
+	    		return r1;
+	    	}
+	    	//sinon on questionne notre API
 	    	URL url = new URL("https://ressources.data.sncf.com/api/records/1.0/search/?dataset=tarifs-intercites-de-jour&q=&rows=100&sort=origine&facet=origine&facet=destination&refine.origine="+origin);
 			HttpURLConnection connexion = (HttpURLConnection) url.openConnection();
 			
@@ -79,8 +90,62 @@ public class TrainLine {
             addNewLine( origin,  destination,  pleinTarif1ere,  pleinTarif2nde,  prixdappel2nde); 
 		
 		}
-     }
-            
+	}
+		
+		
+	public static JSONObject  MiseAJour() throws Exception{
+		JSONObject r = new JSONObject();
+		String TrainTable =  "tarifLine";
+		HashSet<String> originName = new HashSet <String> ();
+		String requete="select origin from "+TrainTable+";";
+	
+		Connection connexion = BaseTools.getMySQLConnection();
+		Statement statement = connexion.createStatement();
+		ResultSet resultat = statement.executeQuery(requete);
+		
+		while (resultat.next()) {
+			originName.add(resultat.getString("origin"));
+			
+		}
+		r.append("a","Récupération des points d'origines ===> success");
+		//formatage de la base de donnée
+		
+		requete="DELETE  from "+TrainTable+";";
+		statement.executeUpdate(requete);
+		resultat.close();
+		statement.close();		
+		connexion.close();
+		
+		r.append("b","Début de la mise a jour");
+		for(String a : originName) {
+			URL url = new URL("https://ressources.data.sncf.com/api/records/1.0/search/?dataset=tarifs-intercites-de-jour&q=&rows=100&sort=origine&facet=origine&facet=destination&refine.origine="+a);
+			HttpURLConnection cn = (HttpURLConnection) url.openConnection();
+			
+			cn.setConnectTimeout(10000);
+			cn.setReadTimeout(10000);
+				
+			StringBuffer response =new StringBuffer();
+			
+			InputStreamReader in = new InputStreamReader(cn.getInputStream());
+			BufferedReader br = new BufferedReader(in);
+			
+			while(br.ready()) {
+				response.append(br.readLine());
+			}
+			br.close();
+			
+			// on récupére le résultat 
+			JSONObject result= new JSONObject(response.toString());
+			
+			
+			//ajouter cette information a la base de donnée
+			recoverDataFromApi(result);
+			
+			r.append("c", "Mise a jour effectuer");
+			
+		}
+		return r;
+	}
         
 }
 		
