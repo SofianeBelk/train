@@ -21,18 +21,9 @@ public class UpdateData implements org.quartz.Job{
     	BasicConfigurator.configure();
     	System.out.println("Job executed at : " + LocalDateTime.now().toString());
         System.out.println("do something...");
-
-        /**
-            1/ recup�rer tout les origins de la base et de les mettre dans une arratlist
-            2/ tu parcours les origins et pour chacun d'entre eux tu v�rifie si ce sont les meme qui se trouve dans l'api ou pas 
-            3/ si ce sont les meme pas besoin de modifer - y'a pas de nouveau distination, les prix restent inchanger
-            4/ sinon supprimer tout ce qui est en rapport avec cet origin 
-            5/ contacte l'api et insert a nouveau dans la base
-         */
         
         
         try {
-            // 1 - recup�rer tout les origine de la base et de les mettre dans une arratlist
         	System.out.println("get all origins from database and api");
 			ArrayList<String> originsDatabase = getAllOriginsFromDatabase();
 			ArrayList<String> originsApi = getAllOriginsFromDatabase(); //a modifier
@@ -41,19 +32,16 @@ public class UpdateData implements org.quartz.Job{
 				System.out.println("origin = "+originsDatabase.get(i));
 			}
 			
-			// 2 - [origin1, origin2...] - [origin1, origin2...]
 			for(int i = 0 ; i<originsDatabase.size() ; i++) {
 				for(int j = 0 ; j<originsApi.size() ; j++) {
 					if(originsDatabase.get(i) == null) {
 						// 3 -
-						
+						//TODO
 					}else {
-						// 4 - sinon supprimer tout ce qui est en rapport avec cet origin
 			        	System.out.println("delete database");
 			        	Thread.sleep(100L);
 						deleteDatabase();
 						
-						// 5 - contacte l'api et insert a nouveau dans la base
 						Thread.sleep(100L);
 			        	System.out.println("re-insert every origin from api to database");
 			        	if(!originsDatabase .isEmpty()) {
