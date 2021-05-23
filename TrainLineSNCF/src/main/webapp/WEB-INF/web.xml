@@ -65,13 +65,22 @@ id="WebApp_ID" version="4.0">
             <url-pattern>/Coordinate</url-pattern>
    </servlet-mapping>
    
-       <servlet>
+   <servlet>
             <servlet-name>PromoCodeGenerator</servlet-name>
             <servlet-class>trainLine.servlets.PromoCodeGenerator</servlet-class>
    </servlet>
    <servlet-mapping>
             <servlet-name>PromoCodeGenerator</servlet-name>
             <url-pattern>/PromoCodeGen</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+            <servlet-name>MiseAJour</servlet-name>
+            <servlet-class>trainLine.servlets.MiseajourBDD</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>MiseAJour</servlet-name>
+            <url-pattern>/Update</url-pattern>
    </servlet-mapping>
    
 </web-app>

@@ -14,9 +14,7 @@ import trainLine.services.UpdateData;
 
 
 /**
- * il faut lancer le serveur
- * @author Asus_
- *
+ * Mis à jour de la base naif : en lancant le serveur
  */
 public class LogicalUpdate implements ServletContextListener {
         Scheduler scheduler = null;
