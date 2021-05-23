@@ -43,14 +43,11 @@ public class TrainLineBD {
 		Statement statement = connexion.createStatement();	
 		
 		if (!res.isEmpty()) {
-			System.out.println("les données sont disponibles, mise a jours des données en cours");
-			String req = "delete from "+LineTable+" where origin = " +origin+ " and destination = " +destination;
+			System.out.println("les donnees sont disponibles, mise a jours des donnees en cours");
+			String req = "delete from "+LineTable+" where origin = '"+origin+"' and destination = '" +destination+"'";
 			statement.executeUpdate(req);
-
 		}
 			String requete = "insert into  "+LineTable+" values ('"+origin+"','"+pleinTarif1ere+"','"+destination+"','"+pleinTarif2nde+"','"+prixdappel2nde+"' )";
-		
-				
 		
 			int retour = statement.executeUpdate(requete);
 

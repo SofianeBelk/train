@@ -17,10 +17,8 @@ public class SearchTrain extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
-		
 		String origin= request.getParameter("origin");
-		
-		
+
 		try {
 			out.print(TrainLine.searchTrain(origin));
 		} catch (Exception e) {

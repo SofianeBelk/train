@@ -5,12 +5,6 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee_7" xsi:schemaLocation=
 id="WebApp_ID" version="4.0">
 
 
- <dependency>
-    <groupId>org.json</groupId>
-    <artifactId><?xml-stylesheet type="json" href=""?></artifactId>
-    <version>20080701</version>
-</dependency>
-
 
  <display-name>TrainLineSNCF</display-name> 
 
@@ -24,6 +18,24 @@ id="WebApp_ID" version="4.0">
    </servlet-mapping>
    
    
+       <servlet>
+            <servlet-name>TrainAuthentification</servlet-name>
+            <servlet-class>trainLine.servlets.Authentification</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>TrainAuthentification</servlet-name>
+            <url-pattern>/Authentification</url-pattern>
+   </servlet-mapping>
+   
+   
+         <servlet>
+            <servlet-name>TrainValidSession</servlet-name>
+            <servlet-class>trainLine.servlets.ValidationSession</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>TrainValidSession</servlet-name>
+            <url-pattern>/ValidSession</url-pattern>
+   </servlet-mapping>
    
     <servlet>
             <servlet-name>TrainReservation </servlet-name>
@@ -44,14 +56,24 @@ id="WebApp_ID" version="4.0">
             <url-pattern>/Search</url-pattern>
    </servlet-mapping>
    
-   <servlet>
-            <servlet-name>MiseAJour</servlet-name>
-            <servlet-class>trainLine.servlets.MiseajourBDD</servlet-class>
+    <servlet>
+            <servlet-name>Coordianator</servlet-name>
+            <servlet-class>trainLine.servlets.CityCoordinate</servlet-class>
    </servlet>
    <servlet-mapping>
-            <servlet-name>MiseAJour</servlet-name>
-            <url-pattern>/Update</url-pattern>
+            <servlet-name>Coordianator</servlet-name>
+            <url-pattern>/Coordinate</url-pattern>
    </servlet-mapping>
+   
+       <servlet>
+            <servlet-name>PromoCodeGenerator</servlet-name>
+            <servlet-class>trainLine.servlets.PromoCodeGenerator</servlet-class>
+   </servlet>
+   <servlet-mapping>
+            <servlet-name>PromoCodeGenerator</servlet-name>
+            <url-pattern>/PromoCodeGen</url-pattern>
+   </servlet-mapping>
+   
 </web-app>
 <!-- https://mvnrepository.com/artifact/org.json/json -->
 

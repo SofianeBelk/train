@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import trainLine.utils.SessionTools;
 import trainLine.utils.UserTools;
-import trainLine.bdd.SessionBD;
 import trainLine.bdd.UserBD;
 
 public class User {

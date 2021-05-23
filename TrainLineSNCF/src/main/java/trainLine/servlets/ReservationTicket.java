@@ -21,8 +21,7 @@ public class ReservationTicket  extends HttpServlet{
 		PrintWriter out = response.getWriter();
 		
 		String key= request.getParameter("key");
-		String idTrain= request.getParameter("idTrain");
-		
+		String idTrain= request.getParameter("codepromo");
 		
 		
 		try {
