@@ -11,7 +11,7 @@ import trainLine.utils.BaseTools;
 
 public class TrainLineBD {
 	
-	protected static String LineTable = "tarifLine"; 
+	protected static String LineTable = "tarifline"; 
 	
 	public static JSONObject searchLine(String origin, String distination) throws Exception{
 
