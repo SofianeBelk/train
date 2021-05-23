@@ -1,0 +1,31 @@
+
+.cardbody {
+    display: flex;
+    column-gap: 6px;
+    padding: 0.5rem !important;
+}
+
+.listHeader {
+    background: #d1e8ff;
+    margin-bottom: 5px;
+    display: flex;
+    padding: 14px;
+    column-gap: 6px;
+    width: 130%;
+}
+
+.align {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.center{
+    vertical-align: left;
+}
+
+.gapGrid {
+    margin-bottom: 10px;
+    width: 130%;
+}
+

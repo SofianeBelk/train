@@ -1,0 +1,350 @@
+.loginform {
+    width: 500px;
+    height : 300px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    padding-top: 80px;
+}
+.loginContainer{
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.signupform {
+    width: 500px;
+    height : 400px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    padding-top: 20px;
+    color: rgba(211, 211, 211, 0.7);
+}
+
+.signupContainer{
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;  
+}
+
+.HomePageli{
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+ .posts{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+tr.posts td, tr.posts td:hover {
+  font-weight: bold;
+}
+
+
+.container {
+    max-width: 1200px;    
+}
+
+.publicationform{
+    background-color: rgba(255,255,255, .85);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+
+img.icon1{
+    height : 20px;
+    width : 20px;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+.profile-header {
+    transform: translateY(5rem);
+}
+
+.publier{
+    margin-left: 47%;
+}
+
+.mr-1{
+    border-style: hidden;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #0575E6 0%, #021B79 51%, #0575E6 100%);
+    box-shadow: none;
+}
+
+.mr-1:hover { 
+    background-position: right center; 
+}
+
+.mr-2{
+    border-style: hidden;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #88000e 0%, #db4e44 51%, #88000e 100%);
+    box-shadow: none;
+}
+
+.mr-2:hover { 
+    background-position: right center; 
+}
+.nav {
+    box-shadow:       3px  3px 3px 3px rgba(53, 53, 53, 0.521);
+} 
+
+.loginBtn,.signupBtn{
+    display: flex; 
+    justify-content: center;
+    border-style: hidden;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 25px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #ff4b1f 0%, #1fddff 51%, #ff4b1f 100%);
+    box-shadow: none;
+}
+
+.loginBtn:hover,.signupBtn:hover { 
+    background-position: right center; 
+}
+
+.mr-3{
+    border-style: hidden;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #ff4b1f 0%, #ff9068 51%, #ff4b1f 100%);
+    box-shadow: none;
+}
+
+.mr-3:hover { 
+    background-position: right center; 
+}
+
+.publier{
+    margin-left: 47%;
+}
+.buttonSubmitPublish{
+    margin-left: 40%;
+    padding-top: 10px;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-bottom: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 25px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
+    border-style: hidden;
+}
+
+.buttonSubmitPublish:hover { 
+    background-position: right center; 
+}
+
+.buttonSubmit{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 7px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 25px;
+    background-color: #fff;
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%);
+    border-style: hidden;
+}
+
+.buttonSubmit:hover { 
+    background-position: right center; 
+}
+
+.mr-4, .mx-4 {
+  margin-left: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  display: inline-block;
+}
+
+.rowMessage{
+    margin-top: 30px;
+}
+
+
+.chatroom {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.64);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 rgba(0,0,0, 0.3);
+}
+
+.chatroom .chats {
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 10px 0 0;
+  height: 510px;
+  overflow-y: scroll;
+}
+
+.chatroom .chats .chat {
+  background: rgba(5, 142, 167, 0.692);
+  position: relative;
+  padding: 5px 13px;
+  font-size: 14px;
+  border-radius: 10px;
+  list-style: none;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  max-width: 200px;
+}
+
+.chatroom .chats .chat img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+
+.chatroom .chats .chat.right {
+  float: right;
+  clear: both;
+}
+
+.chatroom .chats .chat a {
+  text-decoration: none;
+  color:#3498DB;
+}
+
+.chatroom .input {
+  height: 40px;
+  width: 100%;
+  background: rgba(30, 228, 148, 0.7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chatroom .input input[type="text"] {
+  outline: 0;
+  border: 2px solid #1EE494;
+  padding: 0 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 10px;
+  height: 30px;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.textareaclass {
+  background: rgba(255, 255, 255, 0.5);
+  outline: 0;
+  border: 2px solid #1EE494;
+  padding: 0 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 10px;
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.chatroom .input input[type="submit"] {
+  background: transparent;
+  border: 1px solid #1EE494;
+  height: 30px;
+  width: 20%;
+  font-size: 14px;
+  float: right;
+  box-sizing: border-box;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatroom .input input[type="submit"]:hover {
+  background: #1EE494;
+  color: #FFF;
+}
+
+.discussionCol{
+    border-radius: 25px;
+}
+

@@ -1,0 +1,56 @@
+
+.flex-display {
+    display: flex;
+}
+
+.searchContainer {
+    margin-top: 10px;
+}
+
+.searchBtn {
+    width: 300px;
+}
+
+.cardbody {
+    display: flex;
+    column-gap: 12px;
+    padding: 0.5rem !important;
+}
+
+.listHeader {
+    background: #d1e8ff;
+    margin-bottom: 5px;
+    display: flex;
+    padding: 10px;
+    column-gap: 12px;
+
+}
+
+.align {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.searchPage {
+    margin: 20px;
+}
+
+.gapGrid {
+    margin-bottom: 10px;
+}
+
+.scrollable {
+    max-height: 640px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.emptyList {
+    font-weight: 600;
+    color: #4e4d4d;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
