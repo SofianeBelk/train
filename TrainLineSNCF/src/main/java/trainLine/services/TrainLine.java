@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import trainLine.bdd.TrainLineBD;
 import trainLine.utils.BaseTools;
+import trainLine.utils.TrainTools;
 
 
 
@@ -63,7 +64,13 @@ public class TrainLine {
 			result= new JSONObject(response.toString());
 			
 			//ajouter cette information a la base de donnée
-			recoverDataFromApi(result);
+			//recoverDataFromApi(result);
+			
+			JSONObject r1 = TrainTools.TrainSearchFromBdd(origin);
+            if(r1.isEmpty()) {
+                recoverDataFromApi(result);
+            }
+			
 	    }
 	    
 		return result;
